@@ -1,0 +1,56 @@
+﻿@page
+@model Badminton_coaching_website.Pages.coaching.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Coaching</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                <label asp-for="Coaching.Levels" class="control-label">Select level</label>
+                <select asp-for="Coaching.Levels" class="form-control" >
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Advanced </option>
+                </select>
+                <span asp-validation-for="Coaching.Levels" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coaching.Datestart" class="control-label">Start date</label>
+                <input asp-for="Coaching.Datestart" class="form-control" />
+                <span asp-validation-for="Coaching.Datestart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <label asp-for="Coaching.Hours" class="control-label">select hours to train</label>
+                <select asp-for="Coaching.Hours" class="form-control" >
+                <option>1</option>
+                <option>2</option>
+                </select>
+                <span asp-validation-for="Coaching.Hours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coaching.Timings" class="control-label">Select timings</label>
+                <select asp-for="Coaching.Timings" class="form-control" />
+                <option>06:00 AM</option>
+                <option>08:00 AM</option>
+                <option>10:00 AM</option>
+                </select>
+                <span asp-validation-for="Coaching.Timings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="submit" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

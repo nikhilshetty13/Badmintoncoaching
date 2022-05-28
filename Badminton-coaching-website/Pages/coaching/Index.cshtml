@@ -1,0 +1,54 @@
+﻿@page
+@model Badminton_coaching_website.Pages.coaching.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">coaching</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaching[0].Levels)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaching[0].Datestart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaching[0].Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coaching[0].Timings)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Coaching) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Levels)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datestart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hours)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Timings)
+            </td>
+            <td>
+               
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+              
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

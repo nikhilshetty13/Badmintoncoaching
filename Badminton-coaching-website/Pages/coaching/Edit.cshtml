@@ -1,0 +1,50 @@
+﻿@page
+@model Badminton_coaching_website.Pages.coaching.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Coaching</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Coaching.Id" />
+            <div class="form-group">
+                <label asp-for="Coaching.Levels" class="control-label"></label>
+                <input asp-for="Coaching.Levels" class="form-control" />
+                <span asp-validation-for="Coaching.Levels" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coaching.Datestart" class="control-label"></label>
+                <input asp-for="Coaching.Datestart" class="form-control" />
+                <span asp-validation-for="Coaching.Datestart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coaching.Hours" class="control-label"></label>
+                <input asp-for="Coaching.Hours" class="form-control" />
+                <span asp-validation-for="Coaching.Hours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Coaching.Timings" class="control-label"></label>
+                <input asp-for="Coaching.Timings" class="form-control" />
+                <span asp-validation-for="Coaching.Timings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
